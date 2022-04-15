@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.css'],
+  encapsulation:ViewEncapsulation.None
 })
+
 export class AppComponent {
-  title = 'angular-typescript-app';
+  title = 'Education';
+  showFiller = false;
+  num=5;
+  hidden = false;
+  panelOpenState = false;
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
 }
