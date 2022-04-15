@@ -1,14 +1,14 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "b0427432-5549-4ffe-88ea-35c21fdc3f1f"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-typescript-app": {
+    "Education": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "sass"
-        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -20,19 +20,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-typescript-app",
+            "outputPath": "dist/education",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/package.json"
+              "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/custom-theme.scss",
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -73,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-typescript-app:build:production"
+              "browserTarget": "Education:build:production"
             },
             "development": {
-              "browserTarget": "angular-typescript-app:build:development"
+              "browserTarget": "Education:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-typescript-app:build"
+            "browserTarget": "Education:build"
           }
         },
         "test": {
@@ -94,13 +93,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -108,5 +106,5 @@
       }
     }
   },
-  "defaultProject": "angular-typescript-app"
+  "defaultProject": "Education"
 }
